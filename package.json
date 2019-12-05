@@ -1,0 +1,37 @@
+{
+  "name": "actions-testing",
+  "version": "1.0.0",
+  "description": "Will set status for every commit in GitHub",
+  "main": "source/index.js",
+  "scripts": {
+    "flow": "flow",
+    "build": "babel source/ -d lib/",
+    "test": "jest --testPathIgnorePatterns /lib/",
+    "test-watch": "jest --testPathIgnorePatterns /lib/ --watchAll",
+    "eslint": "./node_modules/eslint/bin/eslint.js --fix --ignore-pattern '**/lib' .",
+    "exec_jira_example": "jira_task_number='PIA-58010' repo='picsart-ios'  node source/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
+    "@babel/preset-flow": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.16.0",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-flowtype": "^3.7.0",
+    "eslint-plugin-prettier": "^3.0.1",
+    "flow-bin": "^0.104.0",
+    "jest": "^24.8.0"
+  },
+  "dependencies": {
+    "@octokit/rest": "^15.10.0",
+    "@slack/client": "^4.6.0",
+    "graphql-request": "^1.8.2",
+    "jenkins": "^0.27.0",
+    "jira-client": "^6.4.1"
+  }
+}
